@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Provider, useSelector } from "react-redux";
+import AddNewTask from "./AddNewTask";
+import "./App.css";
+import store from "./redux/store";
+import TaskList from "./TaskList";
 
 function App() {
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+<Provider store={store}>
+    <div className="main-div">
+
+     <AddNewTask/>
+      <div>
+        <TaskList />
+      </div>
     </div>
+    </Provider>
   );
 }
 
