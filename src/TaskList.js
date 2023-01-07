@@ -9,17 +9,19 @@ import { changeStatus, loadTODo } from "./redux/todos/actions";
 import Task from "./Task";
 const TaskList = () => {
   const todos = useSelector((state) => state?.todos);
-  console.log("🚀 ~ file: TaskList.js:10 ~ TaskList ~ todos", todos)
+
 
   const [columns, setColumns] = useState(todos);
   const dispatch = useDispatch()
 
   const onDragEnd = async (result, columns, setColumns) => {
+ 
 
+    
     const destination = result.destination.droppableId;
     const source = result.source.droppableId;
     const todoId = result.draggableId;
-    console.log("🚀 ~ file: TaskList.js:53 ~ onDragEnd ~ result.source.draggableId", result.draggableId)
+ 
 
 
     // dispatch(changeStatus(destination,todoId))
@@ -110,7 +112,7 @@ const TaskList = () => {
               </div>
             )}
           </Droppable>
-     
+          
         </div>
       </DragDropContext>
     </div>
