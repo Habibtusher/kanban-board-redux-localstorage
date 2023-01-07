@@ -19,14 +19,7 @@ export const changeStatus = (todos) => {
     payload: todos
   };
 };
-//! without localstorage
-// export const changeStatus = (destination,todoId) => {
-//   console.log("🚀 ~ file: actions.js:10 ~ changeStatus ~ id", todoId)
-//   return {
-//     type: CHANGESTATUS,
-//     payload: {todoId, destination,}};
-// };
-//! without localstorage
+
 export const changePosition = (sourceIndex, destinationIndex, id) => {
   return {
     type: CHANGEPOSITION,

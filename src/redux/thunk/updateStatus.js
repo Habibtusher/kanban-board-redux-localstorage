@@ -3,10 +3,10 @@ import {changeStatus, loadTODo } from "../todos/actions"
 
 const updateStatus = (todoId, destination)=>{
     return async (dispatch) =>{
-        console.log("🚀 ~ file: updateStatus.js:5 ~ updateStatus ~ todoId, destination", todoId, destination)
+      
         let updatedTodo=[]
         var existing = JSON.parse(localStorage.getItem('todos'));
-        console.log("🚀 ~ file: updateStatus.js:7 ~ return ~ existing", existing)
+     
         
      existing.map((todo) => {
         if (todo.id != todoId) {
