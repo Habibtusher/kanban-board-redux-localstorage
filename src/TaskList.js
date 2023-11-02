@@ -17,12 +17,9 @@ const TaskList = () => {
   const onDragEnd = async (result, columns, setColumns) => {
  
 
-    
     const destination = result.destination.droppableId;
     const source = result.source.droppableId;
     const todoId = result.draggableId;
- 
-
 
     // dispatch(changeStatus(destination,todoId))
     dispatch(updateStatus(todoId,destination))
@@ -112,7 +109,35 @@ const TaskList = () => {
               </div>
             )}
           </Droppable>
-          
+          {/* {Object.entries(columns).map(([columnId, column], index) => {
+            return (
+              <Droppable key={columnId} droppableId={columnId}>
+                {(provided) => (
+                  <div
+                    ref={provided.innerRef}
+                    {...provided.droppableProps}
+                    md={{ span: 24 }}
+                    xs={{ span: 24 }}
+                    sm={{ span: 24 }}
+                    lg={{ span: 12 }}
+                    xl={{ span: 8 }}
+                    xxl={{ span: 8 }}
+                    className="task-div"
+                  >
+                    <p className="task-title">{column.title + columnId}</p>
+                    <div className="task-content">
+                      {" "}
+                      {column.items?.map((item, index) => (
+                        <Task item={item} index={index} />
+                      ))}
+                    </div>
+
+                    {provided.placeholder}
+                  </div>
+                )}
+              </Droppable>
+            );
+          })} */}
         </div>
       </DragDropContext>
     </div>

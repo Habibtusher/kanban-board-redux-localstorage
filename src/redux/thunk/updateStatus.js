@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import {changeStatus, loadTODo } from "../todos/actions"
 
 
@@ -9,16 +10,16 @@ const updateStatus = (todoId, destination)=>{
      
         
      existing.map((todo) => {
-        if (todo.id != todoId) {
+        if (todo.id !== todoId) {
             updatedTodo.push(todo)
 
         } else {
           let newProgress;
-          if (destination == 1) {
+          if (destination === 1) {
             newProgress = "todo";
-          } else if (destination == 2) {
+          } else if (destination === 2) {
             newProgress = "inprogress";
-          } else if (destination == 3) {
+          } else if (destination === 3) {
             newProgress = "done";
           }
          
