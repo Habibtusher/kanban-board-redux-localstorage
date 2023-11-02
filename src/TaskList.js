@@ -20,9 +20,10 @@ const TaskList = () => {
     const destination = result.destination.droppableId;
     const source = result.source.droppableId;
     const todoId = result.draggableId;
+    const destIn = result.destination.index;
 
     // dispatch(changeStatus(destination,todoId))
-    dispatch(updateStatus(todoId,destination))
+    dispatch(updateStatus(todoId,destination,destIn))
   };
   useEffect(() => {
     dispatch(fetchTodo)
@@ -51,7 +52,7 @@ const TaskList = () => {
                 <div className="task-content">
                   {" "}
                   {todos?.filter((e)=>e.progress === "todo")?.map((item, index) => (
-                    <Task item={item} index={index} />
+                    <Task key={index} item={item} index={index} />
                   ))}
                 </div>
 
